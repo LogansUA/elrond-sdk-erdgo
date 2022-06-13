@@ -57,7 +57,7 @@ type TransactionInfo struct {
 // TransactionOnNetwork holds a transaction's info entry in a hyper block
 type TransactionOnNetwork struct {
 	Type             string                                `json:"type"`
-	Hash             string                                `json:"hash"`
+	Hash             string                                `json:"hash"` // Is not populated?
 	Nonce            uint64                                `json:"nonce"`
 	Value            string                                `json:"value"`
 	Receiver         string                                `json:"receiver"`
@@ -68,8 +68,11 @@ type TransactionOnNetwork struct {
 	Signature        string                                `json:"signature"`
 	SourceShard      uint32                                `json:"sourceShard"`
 	DestinationShard uint32                                `json:"destinationShard"`
+	BlockNonce       uint64                                `json:"blockNonce"`
+	BlockHash        string                                `json:"blockHash"`
 	MiniblockType    string                                `json:"miniblockType"`
 	MiniblockHash    string                                `json:"miniblockHash"`
+	Timestamp        uint64                                `json:"timestamp"`
 	Status           string                                `json:"status"`
 	HyperBlockNonce  uint64                                `json:"hyperblockNonce"`
 	HyperBlockHash   string                                `json:"hyperblockHash"`
